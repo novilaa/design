@@ -76,8 +76,6 @@
 
         <div class="header-actions">
 
-            <button class="theme-toggle" id="themeToggle" type="button" aria-label="Сменить тему"></button>
-
             <a href="#contacts" class="header-button">
                 Заказать
             </a>
@@ -179,7 +177,7 @@
             <div class="hero-right">
 
                 <div class="device fan-phone fan-left" aria-hidden="true">
-                    <iframe src="demo/birthday-pink/" title="" tabindex="-1" loading="lazy"></iframe>
+                    <div class="screen"><iframe src="demo/birthday-pink/" title="" tabindex="-1" scrolling="no" loading="lazy"></iframe></div>
                 </div>
 
                 <img
@@ -189,7 +187,7 @@
                 >
 
                 <div class="device fan-phone fan-right" aria-hidden="true">
-                    <iframe src="demo/gender-party/" title="" tabindex="-1" loading="lazy"></iframe>
+                    <div class="screen"><iframe src="demo/gender-party/" title="" tabindex="-1" scrolling="no" loading="lazy"></iframe></div>
                 </div>
 
                 <div class="hero-stamp" aria-hidden="true">
@@ -443,17 +441,12 @@
 
     <div class="container about-grid">
 
-        <div class="about-photo">
-            <span class="about-monogram">y.i</span>
-            <!-- Чтобы показать своё фото, положите его в images/about.jpg -->
-            <img src="images/about.jpg" alt="" onerror="this.remove()">
+        <div class="about-head">
+            <span class="eyebrow">Обо мне</span>
+            <h2 class="section-title">Делаю приглашения <em>с душой</em></h2>
         </div>
 
-        <div class="about-text">
-
-            <span class="eyebrow">Обо мне</span>
-
-            <h2 class="section-title">Делаю приглашения <em>с душой</em></h2>
+        <div class="about-body">
 
             <p>
                 Я лично общаюсь с каждым клиентом: подбираю шаблон под вашу дату и стиль,

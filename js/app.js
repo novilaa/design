@@ -265,7 +265,7 @@ function renderTemplates(data) {
         // Есть демо — показываем его живым в рамке телефона, иначе обложку
         const preview = template.demoUrl
             ? `<div class="device template-phone">
-                    <iframe src="${template.demoUrl}" title="" tabindex="-1" loading="lazy"></iframe>
+                    <div class="screen"><iframe src="${template.demoUrl}" title="" tabindex="-1" scrolling="no" loading="lazy"></iframe></div>
                </div>`
             : `<img
                     src="${template.cover || template.image}"
@@ -948,7 +948,7 @@ const FRAME_WIDTH = 390;
 
 function fitFrames() {
 
-    document.querySelectorAll(".device").forEach(device => {
+    document.querySelectorAll(".device .screen").forEach(device => {
 
         const frame = device.querySelector("iframe");
 
@@ -967,38 +967,6 @@ function fitFrames() {
 window.addEventListener("resize", fitFrames);
 window.addEventListener("load", fitFrames);
 fitFrames();
-
-// =====================================
-// Тема (светлая / тёмная)
-// =====================================
-
-const themeToggle = document.getElementById("themeToggle");
-
-function applyTheme(theme) {
-
-    document.documentElement.dataset.theme = theme;
-
-    try { localStorage.setItem("theme", theme); } catch (error) { /* приватный режим */ }
-
-}
-
-try {
-
-    const saved = localStorage.getItem("theme");
-
-    if (saved) document.documentElement.dataset.theme = saved;
-
-} catch (error) { /* приватный режим */ }
-
-if (themeToggle) {
-
-    themeToggle.addEventListener("click", () => {
-
-        applyTheme(document.documentElement.dataset.theme === "dark" ? "light" : "dark");
-
-    });
-
-}
 
 // =====================================
 // Шапка: прячется при прокрутке вниз, появляется при прокрутке вверх
