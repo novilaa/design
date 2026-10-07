@@ -2067,3 +2067,10 @@ html{ scroll-padding-top:80px; }
 @media (max-width:768px){
     .gallery{ scroll-padding-left:16px; }
 }
+
+.device .screen img{
+    display:block;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}

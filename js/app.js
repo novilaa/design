@@ -270,6 +270,9 @@ function renderTemplates(data) {
                     src="${template.cover || template.image}"
                     alt="${template.title}"
                     loading="lazy"
+                    decoding="async"
+                    width="1200"
+                    height="900"
                 >
 
             </div>
