@@ -262,24 +262,15 @@ function renderTemplates(data) {
 
         card.dataset.cat = template.category;
 
-        // Есть демо — показываем его живым в рамке телефона, иначе обложку
-        const preview = template.demoUrl
-            ? `<div class="device template-phone">
-                    <div class="screen"><iframe src="${template.demoUrl}" title="" tabindex="-1" scrolling="no" loading="lazy"></iframe></div>
-               </div>`
-            : `<img
+        card.innerHTML = `
+
+            <div class="template-image">
+
+                <img
                     src="${template.cover || template.image}"
                     alt="${template.title}"
                     loading="lazy"
-               >`;
-
-        card.innerHTML = `
-
-            <div class="template-image ${template.demoUrl ? "has-phone" : ""}">
-
-                ${template.demoUrl ? `<span class="demo-badge">Живое демо</span>` : ""}
-
-                ${preview}
+                >
 
             </div>
 

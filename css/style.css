@@ -647,7 +647,7 @@ section{
     width:100%;
     height:100%;
     object-fit:cover;
-    object-position:left center;
+    object-position:center;
     transition:transform .8s cubic-bezier(.2,.7,.2,1);
 }
 
@@ -1753,6 +1753,43 @@ html{ scroll-padding-top:80px; }
 .hero-stamp{
     left:2%;
     bottom:2%;
+}
+
+/* ---------- Hero: на компьютере целиком в один экран ---------- */
+
+@media (min-width:993px){
+
+    .hero{
+        min-height:100vh;
+        min-height:100svh;
+        display:flex;
+        align-items:center;
+        padding:96px 0 32px;
+    }
+
+    .hero > .container{ width:min(1200px,calc(100% - 48px)); }
+
+    .hero h1{
+        font-size:clamp(44px,min(7vw,11svh),104px);
+        margin-bottom:clamp(16px,3svh,36px);
+    }
+
+    .hero-subtitle{ margin-bottom:clamp(14px,3svh,34px); }
+
+    .hero p{ margin-bottom:clamp(20px,4svh,44px); }
+
+    .hero-facts{
+        margin-top:clamp(24px,6svh,70px);
+        padding-top:clamp(14px,2.5svh,28px);
+    }
+
+    .hero-facts strong{ font-size:clamp(28px,4.5svh,38px); }
+
+    .hero-phone{
+        width:auto;
+        max-width:100%;
+        max-height:calc(100svh - 150px);
+    }
 }
 
 /* ===========================================
